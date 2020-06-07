@@ -19,9 +19,8 @@
     npm install -g yarn
     ```
 
-### Developing with the browser example
+### Develop with your browser!
 
-1. Start development
     ```
     cd pomodoro
     yarn start
