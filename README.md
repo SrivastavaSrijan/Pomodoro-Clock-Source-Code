@@ -10,8 +10,8 @@
 2. Install npm and node.
 
     ```
-    nvm install 8
-    nvm use 8
+    nvm install node
+    nvm use
     ```
 3. Install yarn.
 
