@@ -21,10 +21,10 @@
 
 ### Develop with your browser!
 
-    ```
+  
     cd pomodoro
     yarn start
-    ```
+ 
 
 Open http://localhost:3000 in the browser.
 
