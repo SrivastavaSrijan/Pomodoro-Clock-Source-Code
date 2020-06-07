@@ -22,7 +22,11 @@ Being productive is hard. We make it easy. :eggplant:
     ```
     npm install -g yarn
     ```
+4. Install modules
 
+    ```
+    yarn install
+    ```
 ### Develop with your browser!
 
   
