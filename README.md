@@ -1,7 +1,6 @@
 # Pomodoro Clock :tomato:
 
-
-:tomato: Being productive is hard. We make it easy. :eggplant:
+Being productive is hard. We make it easy. :eggplant:
 
 
 ## Getting Started
