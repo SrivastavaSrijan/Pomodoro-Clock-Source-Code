@@ -6,27 +6,26 @@
 
 ## Getting Started
 
-
-## Getting started
-
 1. Install [nvm](https://github.com/creationix/nvm#install-script).
-
-
 2. Install npm and node.
 
-    ```nvm install 8
-    nvm use 8```
-
+    ```
+    nvm install 8
+    nvm use 8
+    ```
 3. Install yarn.
 
-    ```npm install -g yarn```
+    ```
+    npm install -g yarn
+    ```
 
 ### Developing with the browser example
 
 1. Start development
-
-    ```cd pomodoro
-    yarn start```
+    ```
+    cd pomodoro
+    yarn start
+    ```
 
 Open http://localhost:3000 in the browser.
 
