@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap");
+
+* {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 1.5vmax;
+}
+
+.Toastify__toast-container {
+  width: fit-content;
+}
+
+.Toastify__close-button {
+  font-size: 2vmax;
+}
+.Toastify__toast-body {
+  margin: auto 0;
+  flex: 1 1;
+  text-align: center;
+  text-transform: none;
+}
+.Toastify__toast-body > p {
+  font-size: 1vmax;
+  text-transform: none;
+}
+.__react_component_tooltip {
+  overflow: hidden;
+  font-size: 1.2vmax;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  font-family: "Playfair Display", sans-serif;
+  margin: 0 auto;
+  user-select: none;
+  min-height: 100vh;
+}
+
+.showMe {
+  animation: fadeIn 0.2s linear;
+}
+.showNo {
+  animation: fadeOut 0.01s linear;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 500ms;
+}
+@media only screen and (max-width: 768px) {
+  .Toastify__toast-body > p {
+    font-size: 2vmax;
+  }
+  .Toastify__toast-container {
+    width: fit-content;
+    max-width: 70vw;
+  }
+
+  .Toastify__close-button {
+    font-size: 4vmax;
+  }
+  .__react_component_tooltip {
+    overflow: hidden;
+    font-size: 2vmax;
+  }
+}
