@@ -1,7 +1,12 @@
 # Pomodoro Clock :tomato:
 
 Being productive is hard. We make it easy. :eggplant:
-
+* PERN stack web application focused on improving productivity. 
+* t'martyr is a Pomodoro clock which displays beautiful wallpapers and quotes when you're working and reminds you to take a break after preset intervals to prevent burnout.
+* The Progressive Web App (PWA) uses the postgres-express-react-node stack. 
+* The API registers users and signs them up using JSON Web Tokens (JWT). 
+* This allows users to be constantly synced up and their tasks and progress be updated across devices. 
+* It uses a strong encryption tool at the backend to transfer data using HTTPS.
 
 ## Getting Started
 
