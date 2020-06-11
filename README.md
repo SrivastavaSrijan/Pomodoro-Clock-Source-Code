@@ -54,7 +54,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 ### Nobody does anything alone. A huge thanks to - 
-* My parents for their house and the amazing coffe-making capabilities it has.
+* My parents for their house and the amazing coffee-making capabilities it has.
 * Friends and confidantes - thank you for your patience.
 * StackOverFlow and everyone whose code I used.
   
