@@ -32,6 +32,7 @@ jobs:
       - run: npm run build
         env:
           VITE_UNSPLASH_KEY: ${{ secrets.VITE_UNSPLASH_KEY }}
+          VITE_UNSPLASH_SECRET: ${{ secrets.VITE_UNSPLASH_SECRET }}
 
       - uses: actions/configure-pages@v5
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Confetti from 'react-confetti';
 import { ToastContainer, toast, Slide } from 'react-toastify';
+import GridLoader from 'react-spinners/GridLoader';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Header } from './components/Header';
@@ -114,18 +115,14 @@ export default function App() {
     }
   }, []);
 
-  // Preload background image
+  // Preload background image (hidden img tag like master)
   const prevUrlRef = useRef<string | null>(null);
   useEffect(() => {
     const url = unsplash.current?.url;
     if (url && url !== prevUrlRef.current) {
       prevUrlRef.current = url;
       setBgLoaded(false);
-      const img = new Image();
-      img.onload = () => setBgLoaded(true);
-      img.src = url;
     }
-    // unsplash object is stable via useCallback but current changes; track via url
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [unsplash.current?.url]);
 
@@ -152,20 +149,34 @@ export default function App() {
     }
   }, [timer]);
 
-  // Background style
+  // Background style (matches master: theme-aware gradient overlay)
   const bgStyle: React.CSSProperties = {
     backgroundColor: theme.bg,
     backgroundImage:
       unsplash.current && bgLoaded
-        ? `linear-gradient(${isDark ? 'rgba(0,0,0,0.65)' : 'rgba(0,0,0,0.25)'}, ${isDark ? 'rgba(0,0,0,0.65)' : 'rgba(0,0,0,0.25)'}), url(${unsplash.current.url})`
+        ? `linear-gradient(120deg, ${theme.bgLinear}, ${theme.bgLinear}), url(${unsplash.current.url})`
         : 'none',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    backgroundRepeat: 'no-repeat',
     transition: 'background-image 0.8s ease-in-out, background-color 0.5s ease',
   };
 
+  // Show loader when session is active and background is still loading
+  const showLoader = timer.phase !== 'idle' && !bgLoaded && !unsplash.error;
+
   return (
     <div className="app" style={bgStyle}>
+      {/* Hidden image for preloading, like master */}
+      {unsplash.current && (
+        <img
+          style={{ display: 'none' }}
+          src={unsplash.current.url}
+          onLoad={() => setBgLoaded(true)}
+          alt="bg"
+        />
+      )}
       {showConfetti && <Confetti recycle={false} numberOfPieces={300} />}
 
       <Header
@@ -205,6 +216,13 @@ export default function App() {
         )}
 
         <QuoteDisplay quote={quotes.current} theme={theme} />
+
+        <GridLoader
+          color={theme.text}
+          loading={showLoader}
+          size={25}
+          cssOverride={{ display: 'block', margin: '5px auto' }}
+        />
       </main>
 
       {showSettings && (
