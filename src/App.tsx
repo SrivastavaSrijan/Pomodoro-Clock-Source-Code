@@ -115,7 +115,7 @@ export default function App() {
     }
   }, []);
 
-  // Preload background image (hidden img tag like master)
+  // Preload background image via hidden img tag
   const prevUrlRef = useRef<string | null>(null);
   useEffect(() => {
     const url = unsplash.current?.url;
@@ -149,7 +149,7 @@ export default function App() {
     }
   }, [timer]);
 
-  // Background style (matches master: theme-aware gradient overlay)
+  // Background style with theme-aware gradient overlay
   const bgStyle: React.CSSProperties = {
     backgroundColor: theme.bg,
     backgroundImage:
@@ -168,7 +168,7 @@ export default function App() {
 
   return (
     <div className="app" style={bgStyle}>
-      {/* Hidden image for preloading, like master */}
+      {/* Hidden image for preloading */}
       {unsplash.current && (
         <img
           style={{ display: 'none' }}

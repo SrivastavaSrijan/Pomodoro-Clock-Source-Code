@@ -28,7 +28,8 @@ export function useUnsplash() {
   const [error, setError] = useState(initial.error);
   const fetchedRef = useRef(false);
 
-  const pickPhoto = useCallback((rawPhotos: UnsplashRawPhoto[]): UnsplashPhoto => {
+  const pickPhoto = useCallback((rawPhotos: UnsplashRawPhoto[]): UnsplashPhoto | null => {
+    if (rawPhotos.length === 0) return null;
     const idx = Math.floor(Math.random() * rawPhotos.length);
     const p = rawPhotos[idx];
     return {
