@@ -47,7 +47,12 @@ export function useUnsplash() {
     fetch(
       `https://api.unsplash.com/photos/random?collections=${COLLECTION_IDS}&count=30&client_id=${accessKey}`
     )
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Unsplash API error: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data: UnsplashRawPhoto[]) => {
         if (!Array.isArray(data)) throw new Error('Invalid response');
         setPhotos(data);
