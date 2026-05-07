@@ -33,7 +33,7 @@ export function useUnsplash() {
     const p = rawPhotos[idx];
     return {
       url: `${p.urls.raw}&auto=format&fit=crop&w=1350&q=80`,
-      author: `${p.user.first_name || ''} ${p.user.last_name || ''}`.trim() || p.user.name,
+      author: [p.user.first_name, p.user.last_name].filter(Boolean).join(' ') || p.user.name,
       authorUrl: p.user.links.html,
     };
   }, []);
