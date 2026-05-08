@@ -255,34 +255,63 @@ body {
 
 /* ---- Quote ---- */
 .quote-section {
-  text-align: center;
-  max-width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 50vmax;
+  border-radius: 6px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  padding: 20px;
   animation: fadeIn 0.5s ease-in;
 }
 
 .quote-text {
-  font-size: 0.95rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2vmax;
   line-height: 1.6;
-  margin: 0.5rem 0;
-  font-style: italic;
+  margin: 0;
+  font-style: normal;
+  letter-spacing: 0.2px;
+  opacity: 1;
 }
 
 .quote-author {
   font-family: 'Abril Fatface', serif;
-  font-size: 1.1rem;
+  font-size: 2vmax;
   font-style: normal;
+  text-transform: lowercase;
+  margin: -15px 45px;
+  opacity: 0.7;
   display: inline-flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .quote-underline {
   display: block;
-  width: 40px;
-  height: 2px;
-  margin-top: 0.4rem;
-  opacity: 0.4;
+  width: 54px;
+  height: 0;
+  padding-top: 8px;
+  border-top: 4px solid;
+  opacity: 0.6;
   border-radius: 1px;
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .quote-text {
+    font-size: 2.7vmax;
+  }
+
+  .quote-author {
+    font-size: 3.2vmax;
+    margin: -15px 25px;
+  }
 }
 
 /* ---- Modals ---- */

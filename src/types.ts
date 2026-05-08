@@ -25,6 +25,7 @@ export interface ThemeColors {
   border: string;
   bg: string;
   muted: string;
+  bgLinear: string;
 }
 
 // Tasks
